@@ -7,6 +7,8 @@ namespace Motion.Unity
     /// </summary>
     public class MotionTimeBehaviour : MonoBehaviour
     {
+
+        public delegate void UpdateDelegate(float percent);
         /// <summary>
         /// 当前时间
         /// </summary>
@@ -27,6 +29,11 @@ namespace Motion.Unity
         /// 时间曲线
         /// </summary>
         public AnimationCurve TimeCurve;
+
+        /// <summary>
+        /// 进度事件
+        /// </summary>
+        public event UpdateDelegate UpdateEvent;
 
         private void Update()
         {
@@ -62,9 +69,26 @@ namespace Motion.Unity
             return percent;
         }
 
-        public virtual void OnUpdatePercent(float percent)
+        /// <summary>
+        /// 更新进度
+        /// </summary>
+        /// <param name="percent"></param>
+        public void OnUpdatePercent(float percent)
         {
+            percent = Mathf.Clamp01(percent);
+            SetPercent(percent);
+        }
 
+        /// <summary>
+        /// 设置百分比
+        /// </summary>
+        /// <param name="percent"></param>
+        public void SetPercent(float percent)
+        {
+            if (UpdateEvent != null)
+            {
+                UpdateEvent(percent);
+            }
         }
 
         /// <summary>

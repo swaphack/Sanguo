@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using Motion.Curve;
 using System;
+using Motion.Unity;
 
-namespace Motion.Unity
+namespace Motion.Debug
 {
     /// <summary>
-    /// 运动行为测试
+    /// Gizoms行为
     /// </summary>
-    public class MotionDebugBehaviour : MonoBehaviour
+    public class MotionGizomsBehaviour : MonoBehaviour
     {
         /// <summary>
         /// Gizoms 是否开启

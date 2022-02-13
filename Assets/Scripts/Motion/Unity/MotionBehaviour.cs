@@ -9,30 +9,6 @@ namespace Motion.Unity
     /// </summary>
     public class MotionBehaviour : MotionTimeBehaviour
     {
-        public delegate void UpdateDelegate(float percent);
-        
-        /// <summary>
-        /// 进度事件
-        /// </summary>
-        public event UpdateDelegate UpdateEvent;
-
-        public override void OnUpdatePercent(float percent)
-        {
-            percent = Mathf.Clamp01(percent);
-            SetPercent(percent);
-        }
-        /// <summary>
-        /// 设置百分比
-        /// </summary>
-        /// <param name="percent"></param>
-        public void SetPercent(float percent)
-        {
-            if (UpdateEvent != null)
-            {
-                UpdateEvent(percent);
-            }
-        }
-
         /// <summary>
         /// 获取运动坐标点
         /// </summary>

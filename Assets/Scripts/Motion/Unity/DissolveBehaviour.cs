@@ -10,12 +10,6 @@ namespace Motion.Unity
     /// </summary>
     public class DissolveBehaviour : MotionTimeBehaviour
     {
-        public delegate void UpdateDelegate(float percent);
-
-        /// <summary>
-        /// 进度事件
-        /// </summary>
-        public event UpdateDelegate UpdateEvent;
         /// <summary>
         /// 材质
         /// </summary>
@@ -30,24 +24,6 @@ namespace Motion.Unity
                 _material = meshRenderer.material;
             }
             return _material;
-        }
-
-        public override void OnUpdatePercent(float percent)
-        {
-            percent = Mathf.Clamp01(percent);
-            SetPercent(percent);
-        }
-
-        /// <summary>
-        /// 设置百分比
-        /// </summary>
-        /// <param name="percent"></param>
-        public void SetPercent(float percent)
-        {
-            if (UpdateEvent != null)
-            {
-                UpdateEvent(percent);
-            }
         }
 
         /// <summary>

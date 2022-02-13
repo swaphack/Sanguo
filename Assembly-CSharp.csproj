@@ -72,7 +72,7 @@
     <Compile Include="Assets\Scripts\Motion\Navigation\NavSystem.cs" />
     <Compile Include="Assets\Scripts\Motion\CurvedSurface\ICurvedSurface.cs" />
     <Compile Include="Assets\Scripts\Motion\Unity\SurfaceBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Motion\Unity\MotionDebugBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Motion\Debug\MotionGizomsBehaviour.cs" />
     <Compile Include="Assets\Scripts\Motion\Dissolve\DissolveType.cs" />
     <Compile Include="Assets\Scripts\Sample\CameraMotion.cs" />
     <Compile Include="Assets\Scripts\Motion\Curve\TimeCurve.cs" />
@@ -88,6 +88,8 @@
     <Compile Include="Assets\Scripts\Motion\Unity\MotionBehaviour.cs" />
     <Compile Include="Assets\Scripts\Motion\Define\Path.cs" />
     <Compile Include="Assets\Scripts\Motion\CurvedSurface\BasisSpline.cs" />
+    <Compile Include="Assets\Scripts\Motion\Unity\DissolveTextureBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Motion\Debug\MotionProgressBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Dissolve\Dissolve_Circle.shader" />

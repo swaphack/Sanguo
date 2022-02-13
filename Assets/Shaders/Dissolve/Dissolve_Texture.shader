@@ -65,7 +65,7 @@
                 fixed4 gray = tex2D(_GrayTex, i.uv);
                 half value = gray.r - _Threshold;
                 if (_Reverse) value = - value;
-                if (value < _EffectThreshold) col.rgb = _EffectColor.rgb;
+                if (value < _EffectThreshold && _Threshold > _EffectThreshold) col.rgb = _EffectColor.rgb;
                 clip(value);
                 return col;
             }

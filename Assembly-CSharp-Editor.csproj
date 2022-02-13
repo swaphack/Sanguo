@@ -57,9 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Motion\Editor\SurfaceBasisSplineEditor.cs" />
-    <Compile Include="Assets\Scripts\Motion\Editor\MotionCameraEditor.cs" />
-    <Compile Include="Assets\Scripts\Motion\Editor\DissolveUVEditor.cs" />
-    <Compile Include="Assets\Scripts\Motion\Editor\DissolveDirectionEditor.cs" />
+    <Compile Include="Assets\Scripts\Motion\Editor\MotionProgressEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
