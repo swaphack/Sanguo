@@ -7,7 +7,7 @@
         // 反转
         _Reverse("Reverse", int) = 0
         // 剔除阈值
-        _Threshold("Threshold", float) = 0
+        _Threshold("Threshold", Range(0, 1)) = 0
         // 光效阈值
         _EffectThreshold("EffectThreshold", Range(0, 1)) = 0
         // 光效颜色

@@ -42,6 +42,11 @@ namespace Motion.Unity
             this.SetReverseEffect(ReverseEffect);
         }
 
+        /// <summary>
+        /// 设置裁剪值
+        /// </summary>
+        /// <param name="percent"></param>
+        /// <returns></returns>
         protected override float GetCutOffValue(float percent)
         {
             float min = MinThreshold;
