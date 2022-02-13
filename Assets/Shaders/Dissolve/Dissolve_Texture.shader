@@ -1,25 +1,28 @@
-﻿Shader "Motion/Dissolve/Dissolve_UV"
+﻿Shader "Motion/Dissolve/Dissolve_Texture"
 {
     Properties
     {
         // 纹理
-        _MainTex ("Texture", 2D) = "white" {}
+        _MainTex("Texture", 2D) = "white" {}
+        // 灰度纹理
+        _GrayTex("GrayTexture", 2D) = "white" {}
         // 反转
-        _Reverse("Reverse", int) = 0
+        [Toggle]_Reverse("Reverse", int) = 0
         // 剔除阈值
         _Threshold("Threshold", Range(0, 1)) = 0
         // 光效阈值
         _EffectThreshold("EffectThreshold", Range(0, 1)) = 0
         // 光效颜色
         _EffectColor("EffectColor", Color) = (0,0,0,0)
-        // 光圈中心uv
-        _CenterUV("CenterUV", vector)=(0.5,0.5,0,0)
     }
     SubShader
     {
+        /*
+        *   灰度图
+        */
         Pass
         {
-            Cull Off         
+            Cull Off
 
             CGPROGRAM
 
@@ -29,11 +32,11 @@
             #include "UnityCG.cginc"
 
             sampler2D _MainTex;
+            sampler2D _GrayTex;
             bool _Reverse;
             float _Threshold;
             float _EffectThreshold;
             fixed4 _EffectColor;
-            fixed4 _CenterUV;
 
             struct appdata
             {
@@ -47,7 +50,7 @@
                 float4 vertex : SV_POSITION;
             };
 
-            v2f vert (appdata v)
+            v2f vert(appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
@@ -56,11 +59,12 @@
             }
 
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                half value = sqrt(pow(i.uv.x - _CenterUV.x, 2) + pow(i.uv.y - _CenterUV.y, 2)) - _Threshold;
-                if (_Reverse) value = -value;
+                fixed4 gray = tex2D(_GrayTex, i.uv);
+                half value = gray.r - _Threshold;
+                if (_Reverse) value = - value;
                 if (value < _EffectThreshold) col.rgb = _EffectColor.rgb;
                 clip(value);
                 return col;

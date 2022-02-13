@@ -33,7 +33,7 @@ namespace Motion.Unity
         /// <summary>
         /// 消失方向
         /// </summary>
-        public DissolveDirectionType Direction;
+        public DissolveDirection Direction;
         /// <summary>
         /// 反转效果
         /// </summary>
@@ -65,17 +65,17 @@ namespace Motion.Unity
             Vector3 position = this.transform.position;
             float min = MinThreshold;
             float max = MaxThreshold;
-            if (Direction == DissolveDirectionType.OrderX)
+            if (Direction == DissolveDirection.OrderX)
             {
                 min += position.x;
                 max += position.x;
             }
-            else if (Direction == DissolveDirectionType.OrderY)
+            else if (Direction == DissolveDirection.OrderY)
             {
                 min += position.y;
                 max += position.y;
             }
-            else if(Direction == DissolveDirectionType.OrderZ)
+            else if(Direction == DissolveDirection.OrderZ)
             {
                 min += position.z;
                 max += position.z;
@@ -87,7 +87,7 @@ namespace Motion.Unity
         /// 设置方向
         /// </summary>
         /// <param name="direction"></param>
-        public void SetDirection(DissolveDirectionType direction)
+        public void SetDirection(DissolveDirection direction)
         {
             Direction = direction;
             if (GetMaterial() != null)

@@ -90,8 +90,9 @@
     <Compile Include="Assets\Scripts\Motion\CurvedSurface\BasisSpline.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Shaders\Dissolve\Dissolve_UV.shader" />
+    <None Include="Assets\Shaders\Dissolve\Dissolve_Circle.shader" />
     <None Include="Assets\Shaders\Surface\BasisSpline_Surface.shader" />
+    <None Include="Assets\Shaders\Dissolve\Dissolve_Texture.shader" />
     <None Include="Assets\Shaders\Dissolve\Dissolve_Direction.shader" />
   </ItemGroup>
   <ItemGroup>

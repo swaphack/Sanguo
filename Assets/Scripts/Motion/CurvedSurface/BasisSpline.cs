@@ -109,6 +109,7 @@ namespace Motion.CurvedSurface
             mesh.vertices = vertices;
             mesh.triangles = triangles;
             mesh.uv = uv;
+            mesh.RecalculateNormals();
             return mesh;
         }
     }
