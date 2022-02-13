@@ -8,6 +8,8 @@ Shader "Motion/Surface/BasisSpline_Surface"
     {
         Pass
         {
+            Cull back
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag

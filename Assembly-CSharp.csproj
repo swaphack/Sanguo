@@ -62,17 +62,19 @@
     <Compile Include="Assets\Scripts\Motion\Curve\LineCurve1D.cs" />
     <Compile Include="Assets\Scripts\Motion\Curve\LineCurve2D.cs" />
     <Compile Include="Assets\Scripts\Motion\Dissolve\DissolveEffect.cs" />
-    <Compile Include="Assets\Scripts\Motion\Unity\SurfaceDebugBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Motion\Debug\MotionProgressTest.cs" />
+    <Compile Include="Assets\Scripts\Motion\Debug\MotionSurfaceTest.cs" />
     <Compile Include="Assets\Scripts\Motion\Curve\TransformCurve.cs" />
     <Compile Include="Assets\Scripts\Motion\Deprecated\CurveMode.cs" />
-    <Compile Include="Assets\Scripts\Motion\Unity\SurfaceBasisSplineBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Motion\Unity\DissolveTextureBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Motion\Unity\SurfaceBasisSpline.cs" />
     <Compile Include="Assets\Scripts\Sample\CamereEye.cs" />
     <Compile Include="Assets\Scripts\Motion\Curve\QuaternionCurve.cs" />
     <Compile Include="Assets\Scripts\Motion\Curve\AngleCurve.cs" />
     <Compile Include="Assets\Scripts\Motion\Navigation\NavSystem.cs" />
     <Compile Include="Assets\Scripts\Motion\CurvedSurface\ICurvedSurface.cs" />
     <Compile Include="Assets\Scripts\Motion\Unity\SurfaceBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Motion\Debug\MotionGizomsBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Motion\Debug\MotionGizomsTest.cs" />
     <Compile Include="Assets\Scripts\Motion\Dissolve\DissolveType.cs" />
     <Compile Include="Assets\Scripts\Sample\CameraMotion.cs" />
     <Compile Include="Assets\Scripts\Motion\Curve\TimeCurve.cs" />
@@ -88,8 +90,7 @@
     <Compile Include="Assets\Scripts\Motion\Unity\MotionBehaviour.cs" />
     <Compile Include="Assets\Scripts\Motion\Define\Path.cs" />
     <Compile Include="Assets\Scripts\Motion\CurvedSurface\BasisSpline.cs" />
-    <Compile Include="Assets\Scripts\Motion\Unity\DissolveTextureBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Motion\Debug\MotionProgressBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Motion\Debug\MotionStatusBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Dissolve\Dissolve_Circle.shader" />

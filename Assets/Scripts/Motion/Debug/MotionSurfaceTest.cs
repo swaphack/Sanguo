@@ -1,16 +1,18 @@
-﻿using UnityEngine;
+﻿using Motion.Unity;
+using UnityEngine;
 
-namespace Motion.Unity
+namespace Motion.Debug
 {
     /// <summary>
     /// 表面行为测试
     /// </summary>
-    public class SurfaceDebugBehaviour : MonoBehaviour
+    public class MotionSurfaceTest : MotionStatusBehaviour
     {
         /// <summary>
-        /// Gizoms 是否开启
+        /// 表面行为
         /// </summary>
-        public bool IsGizomsEnable;
+        private SurfaceBehaviour _surface;
+
         /// <summary>
         /// 采样状态
         /// </summary>
@@ -21,15 +23,25 @@ namespace Motion.Unity
         public const int DefaultSampleCount = 100;
 
         /// <summary>
+        /// 表面行为
+        /// </summary>
+        /// <returns></returns>
+        public SurfaceBehaviour GetSurface()
+        {
+            if (_surface == null)
+            {
+                _surface = this.GetComponent<SurfaceBehaviour>();
+            }
+            return _surface;
+        }
+
+        /// <summary>
         /// 绘制表面
         /// </summary>
         protected void DrawGizmosSurface()
         {
-            var behaviour = this.GetComponent<SurfaceBehaviour>();
-            if (behaviour == null)
-            {
-                return;
-            }
+            var behaviour = GetSurface();
+            if (behaviour == null) return;
             var surface = behaviour.GetSurface();
             if (surface == null) return;
 
@@ -42,8 +54,7 @@ namespace Motion.Unity
             var mesh = surface.GetMesh(sampleCount);
             if (mesh)
             {
-                mesh.RecalculateNormals();
-                Gizmos.DrawMesh(mesh);
+                Gizmos.DrawMesh(mesh, behaviour.transform.position, behaviour.transform.rotation);
             }
         }
 
@@ -52,6 +63,8 @@ namespace Motion.Unity
         /// </summary>
         private void OnDrawGizmosSelected()
         {
+            if (!IsEnable) return;
+
             DrawGizmosSurface();
         }
 

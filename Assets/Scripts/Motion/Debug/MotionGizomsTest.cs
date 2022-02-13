@@ -8,12 +8,12 @@ namespace Motion.Debug
     /// <summary>
     /// Gizoms行为
     /// </summary>
-    public class MotionGizomsBehaviour : MonoBehaviour
+    public class MotionGizomsTest : MotionStatusBehaviour
     {
         /// <summary>
-        /// Gizoms 是否开启
+        /// 运动行为
         /// </summary>
-        public bool IsGizomsEnable;
+        private MotionBehaviour _motion;
         /// <summary>
         /// 绘制次数
         /// </summary>
@@ -22,6 +22,19 @@ namespace Motion.Debug
         /// 默认绘制数量
         /// </summary>
         public const int DefaultGizmosDrawCount = 100;
+
+        /// <summary>
+        /// 运动时间行为
+        /// </summary>
+        /// <returns></returns>
+        protected MotionBehaviour GetMotion()
+        {
+            if (_motion == null)
+            {
+                _motion = this.GetComponent<MotionBehaviour>();
+            }
+            return _motion;
+        }
 
         /// <summary>
         /// gizmos绘制
@@ -51,7 +64,7 @@ namespace Motion.Debug
         /// <returns></returns>
         protected Vector3 GetGizmosPoint(float percent)
         {
-            var behaviour = this.GetComponent<MotionBehaviour>();
+            var behaviour = GetMotion();
             if (behaviour == null) return Vector3.zero;
             return behaviour.GetMotionPoint(percent);
         }
@@ -61,10 +74,7 @@ namespace Motion.Debug
         /// </summary>
         private void OnDrawGizmosSelected()
         {
-            if (!IsGizomsEnable)
-            {
-                return;
-            }
+            if (!IsEnable) return;
 
             DrawGizmosLines();
         }

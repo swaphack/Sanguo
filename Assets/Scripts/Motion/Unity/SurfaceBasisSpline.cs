@@ -7,11 +7,11 @@ namespace Motion.Unity
     /// <summary>
     /// B样条表面
     /// </summary>
-    public class SurfaceBasisSplineBehaviour : SurfaceBehaviour
+    public class SurfaceBasisSpline : SurfaceBehaviour
     {
         public BasisSpline Spline;
 
-        public SurfaceBasisSplineBehaviour()
+        public SurfaceBasisSpline()
         {
         }
 

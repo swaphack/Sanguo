@@ -7,12 +7,12 @@ namespace Motion.Debug
     /// <summary>
     /// 进度控制 控制MotionTimeBehaviour
     /// </summary>
-    public class MotionProgressBehaviour : MonoBehaviour
+    public class MotionProgressTest : MotionStatusBehaviour
     {
         /// <summary>
-        /// 运动行为
+        /// 运动时间行为
         /// </summary>
-        private MotionTimeBehaviour _motion;
+        private MotionTimeBehaviour _motionTime;
         /// <summary>
         /// 百分比
         /// </summary>
@@ -30,19 +30,23 @@ namespace Motion.Debug
             set
             {
                 _percent = value;
-                var motion = GetMotion();
+                var motion = GetMotionTime();
                 if (motion == null) return;
-                _motion.SetPercent(_percent);
+                _motionTime.SetPercent(_percent);
             }
         }
 
-        protected MotionTimeBehaviour GetMotion()
+        /// <summary>
+        /// 运动时间行为
+        /// </summary>
+        /// <returns></returns>
+        protected MotionTimeBehaviour GetMotionTime()
         {
-            if (_motion == null)
+            if (_motionTime == null)
             { 
-                _motion = this.GetComponent<MotionTimeBehaviour>();
+                _motionTime = this.GetComponent<MotionTimeBehaviour>();
             }
-            return _motion;
+            return _motionTime;
         }
     }
 }
