@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-namespace Motion.Unity
+namespace Motion.UnityBehaviour
 {
     /// <summary>
     /// 摄像机曲线行为

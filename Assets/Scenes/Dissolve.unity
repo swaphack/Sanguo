@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,15 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &379434304
+--- !u!21 &243683247
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Dissolve_UV (Instance) (Instance) (Instance) (Instance)
-  m_Shader: {fileID: 4800000, guid: 420d438a2f42b77459f5e43d709b4b2e, type: 3}
+  m_Name: Mat_Dissolve (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+  m_Shader: {fileID: 4800000, guid: bd12e1c14936a4f41978096fcf06ab95, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -181,14 +184,19 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
+    - _CullType: 0
+    - _CutOff: -0.035331935
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _Direction: 2
     - _DstBlend: 0
-    - _EffectThreshold: 0.009
+    - _EffectThreshold: 0.018
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _MaxPosY: 10
     - _Metallic: 0
+    - _MinPosY: -10
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -196,14 +204,15 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Threshold: 0.4650838
+    - _Threshold: 0.526
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _CenterUV: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EffectColor: {r: 0.8018868, g: 0.23829654, b: 0.23829654, a: 0}
+    - _EffectColor: {r: 0.9150943, g: 0.90939695, b: 0.366901, a: 0.87058824}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OffsetPosition: {r: -0.5, g: -0.5, b: -0.5, a: 1}
+    - _Position: {r: -0.5, g: -0.5, b: -0.5, a: 1}
   m_BuildTextureStacks: []
 --- !u!1 &491409319
 GameObject:
@@ -302,7 +311,6 @@ GameObject:
   - component: {fileID: 696963057}
   - component: {fileID: 696963056}
   - component: {fileID: 696963060}
-  - component: {fileID: 696963061}
   m_Layer: 0
   m_Name: Dissolve_Texture_Capsule
   m_TagString: Untagged
@@ -344,7 +352,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2040126986}
+  - {fileID: 1045591499}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -382,7 +390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696963055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -401,29 +409,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe94c36012fd514abec57170a5f1a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsLoop: 0
-  ReverseTime: 0
-  TotalTime: 5
+  IsLoop: 1
+  ReverseTime: 1
+  TotalTime: 3
   TimeCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
+      inSlope: 2.2191272
+      outSlope: 2.2191272
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3307699
+      value: 0.7340205
+      inSlope: 1.4141057
+      outSlope: 1.4141057
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5487532
+      value: 0.86679065
+      inSlope: 0.45214352
+      outSlope: 0.45214352
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
+      inSlope: 0.29520285
+      outSlope: 0.29520285
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -433,30 +459,16 @@ MonoBehaviour:
   MinThreshold: 0
   MaxThreshold: 1
   ReverseEffect: 0
---- !u!114 &696963061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696963055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dabb13bd82e9ae74ea3537824977d55f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!21 &1024770809
+--- !u!21 &737009220
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Dissolve (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
-    (Instance) (Instance) (Instance) (Instance) (Instance) (Instance) (Instance)
+  m_Name: Mat_Dissolve_UV (Instance) (Instance) (Instance) (Instance) (Instance)
     (Instance) (Instance)
-  m_Shader: {fileID: 4800000, guid: bd12e1c14936a4f41978096fcf06ab95, type: 3}
+  m_Shader: {fileID: 4800000, guid: 420d438a2f42b77459f5e43d709b4b2e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -506,19 +518,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _CullType: 0
-    - _CutOff: -0.035331935
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Direction: 0
     - _DstBlend: 0
-    - _EffectThreshold: 0.018
+    - _EffectThreshold: 0.009
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MaxPosY: 10
     - _Metallic: 0
-    - _MinPosY: -10
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -526,22 +533,24 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Threshold: -0.49
+    - _Threshold: 0
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - _CenterUV: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EffectColor: {r: 0.9150943, g: 0.90939695, b: 0.366901, a: 0}
+    - _EffectColor: {r: 0.8018868, g: 0.23829654, b: 0.23829654, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
---- !u!21 &1303026090
+--- !u!21 &832019293
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Dissolve_UV (Instance) (Instance) (Instance) (Instance)
+  m_Name: Mat_Dissolve_UV (Instance) (Instance) (Instance) (Instance) (Instance)
+    (Instance) (Instance)
   m_Shader: {fileID: 4800000, guid: 420d438a2f42b77459f5e43d709b4b2e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -607,13 +616,98 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Threshold: 0.21606146
+    - _Threshold: 0
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _CenterUV: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EffectColor: {r: 0.7991036, g: 0.8301887, b: 0.11356357, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &1045591499
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mat_Dissolve_Gray (Instance) (Instance) (Instance)
+  m_Shader: {fileID: 4800000, guid: b76889e54b73af240bafde4332f8ee8f, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GrayTex:
+        m_Texture: {fileID: 2800000, guid: 41de5b58b158a6b428044d48b7ba221c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 31d90913a7745814fb5a24099965f239, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EffectThreshold: 0.001
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Reverse: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Threshold: 0.267
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EffectColor: {r: 0.8773585, g: 0.84598583, b: 0.16140087, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!1 &1689333222
@@ -670,7 +764,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 379434304}
+  - {fileID: 737009220}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -768,9 +862,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1689333222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dabb13bd82e9ae74ea3537824977d55f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9aae258fc0858fe44ad7b435aa3575c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEnable: 1
 --- !u!1 &1734276173
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +964,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1303026090}
+  - {fileID: 832019293}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -923,9 +1018,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1734276173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dabb13bd82e9ae74ea3537824977d55f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9aae258fc0858fe44ad7b435aa3575c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEnable: 1
 --- !u!1 &1791123286
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +1076,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1024770809}
+  - {fileID: 243683247}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1018,7 +1114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791123286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1067,8 +1163,8 @@ MonoBehaviour:
   ShaderThresholdName: _Threshold
   ShaderReverseName: _Reverse
   ShaderDirectionName: _Direction
-  MinThreshold: -0.51
-  MaxThreshold: 0.51
+  MinThreshold: 0
+  MaxThreshold: 1
   Direction: 1
   ReverseEffect: 1
 --- !u!114 &1791123293
@@ -1080,91 +1176,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791123286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dabb13bd82e9ae74ea3537824977d55f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9aae258fc0858fe44ad7b435aa3575c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &2040126986
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Dissolve_Gray (Instance) (Instance)
-  m_Shader: {fileID: 4800000, guid: b76889e54b73af240bafde4332f8ee8f, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _GrayTex:
-        m_Texture: {fileID: 2800000, guid: 41de5b58b158a6b428044d48b7ba221c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 31d90913a7745814fb5a24099965f239, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _EffectThreshold: 0.02
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _Reverse: 0
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Threshold: 0
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EffectColor: {r: 0.8773585, g: 0.84598583, b: 0.16140087, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
+  IsEnable: 0

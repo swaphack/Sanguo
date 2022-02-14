@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Motion.Curve;
 using System;
-using Motion.Unity;
+using Motion.UnityBehaviour;
 
 namespace Motion.Debug
 {

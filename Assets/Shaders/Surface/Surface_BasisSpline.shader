@@ -1,4 +1,4 @@
-Shader "Motion/Surface/BasisSpline_Surface"
+Shader "Motion/Surface/Surface_BasisSpline"
 {
     Properties
     {

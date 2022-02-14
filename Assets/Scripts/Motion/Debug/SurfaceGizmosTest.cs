@@ -1,4 +1,4 @@
-﻿using Motion.Unity;
+﻿using Motion.UnityBehaviour;
 using UnityEngine;
 
 namespace Motion.Debug
@@ -6,7 +6,7 @@ namespace Motion.Debug
     /// <summary>
     /// 表面行为测试
     /// </summary>
-    public class MotionSurfaceTest : MotionStatusBehaviour
+    public class SurfaceGizmosTest : MotionStatusBehaviour
     {
         /// <summary>
         /// 表面行为

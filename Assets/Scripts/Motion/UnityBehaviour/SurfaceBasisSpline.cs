@@ -2,7 +2,7 @@
 using Motion.CurvedSurface;
 using UnityEngine;
 
-namespace Motion.Unity
+namespace Motion.UnityBehaviour
 {
     /// <summary>
     /// B样条表面

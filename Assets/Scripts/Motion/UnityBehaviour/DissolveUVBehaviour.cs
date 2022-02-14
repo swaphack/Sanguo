@@ -2,7 +2,7 @@
 using Motion.Curve;
 using System;
 
-namespace Motion.Unity
+namespace Motion.UnityBehaviour
 {
     /// <summary>
     /// 按照uv消失（unity)

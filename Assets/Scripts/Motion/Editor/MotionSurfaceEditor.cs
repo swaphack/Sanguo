@@ -1,18 +1,18 @@
 ﻿using Motion.Debug;
-using Motion.Unity;
+using Motion.UnityBehaviour;
 using UnityEditor;
 using UnityEngine;
 
 namespace Motion.Editor
 {
-    [CustomEditor(typeof(MotionSurfaceTest))]
+    [CustomEditor(typeof(SurfaceGizmosTest))]
     public class MotionSurfaceEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
 
-            MotionSurfaceTest behaviour = (MotionSurfaceTest)target;
+            SurfaceGizmosTest behaviour = (SurfaceGizmosTest)target;
             var surface = behaviour.GetSurface();
             if (surface)
             {

@@ -1,4 +1,4 @@
-﻿using Motion.Unity;
+﻿using Motion.UnityBehaviour;
 using System.Collections;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ namespace Motion.Debug
     /// <summary>
     /// 进度控制 控制MotionTimeBehaviour
     /// </summary>
-    public class MotionProgressTest : MotionStatusBehaviour
+    public class MotionTimeTest : MotionStatusBehaviour
     {
         /// <summary>
         /// 运动时间行为

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Motion.Navigation
 {
-    class NavSystem
+    /// <summary>
+    /// 导航系统
+    /// </summary>
+    public class NavSystem
     {
     }
 }

@@ -6,10 +6,12 @@
         _MainTex ("Texture", 2D) = "white" {}
         // 反转
         [Toggle]_Reverse("Reverse", int) = 0
+        // 开始偏移位置
+        _OffsetPosition("OffsetPosition", Vector) = (0,0,0,0)
         // 剔除方向0-x,1-y,2-z
         [Enum(Motion.Dissolve.DissolveDirection)]_Direction("Direction", int) = 0
         // 剔除阈值
-        _Threshold("Threshold", Range(-1, 1)) = 0
+        _Threshold("Threshold", Range(0, 1)) = 0
         // 光效阈值
         _EffectThreshold("EffectThreshold", Range(0, 1)) = 0
         // 光效颜色
@@ -33,6 +35,7 @@
 
             sampler2D _MainTex;
             bool _Reverse;
+            fixed4 _OffsetPosition;
             int _Direction;
             float _Threshold;
             float _EffectThreshold;
@@ -56,7 +59,7 @@
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = v.uv;
-                o.worldPos = mul(unity_ObjectToWorld, v.vertex);
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex) - _OffsetPosition;
                 return o;
             }
 
@@ -69,7 +72,12 @@
                 else if (_Direction == 1) value = i.worldPos.y - _Threshold;
                 else if (_Direction == 2) value = i.worldPos.z - _Threshold;
                 if (_Reverse) value = -value;
-                if (value < _EffectThreshold) col.rgb = _EffectColor.rgb;
+                if (value <= _EffectThreshold 
+                    && _Threshold >= _EffectThreshold 
+                    && _Threshold + _EffectThreshold <= 1) 
+                { 
+                    col = _EffectColor;
+                }
                 clip(value);
                 return col;
             }

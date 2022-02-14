@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Motion.Unity
+namespace Motion.UnityBehaviour
 {
     /// <summary>
     /// 对象运动曲线

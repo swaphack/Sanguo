@@ -8,7 +8,9 @@ namespace Motion.Debug
     /// </summary>
     public class MotionStatusBehaviour : MonoBehaviour
     {
-
+        /// <summary>
+        /// 是否启用
+        /// </summary>
         public bool IsEnable = true;
     }
 }

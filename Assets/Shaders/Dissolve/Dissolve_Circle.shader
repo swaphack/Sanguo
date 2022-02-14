@@ -64,7 +64,12 @@
                 fixed4 col = tex2D(_MainTex, i.uv);
                 half value = sqrt(pow(i.uv.x - _CenterUV.x, 2) + pow(i.uv.y - _CenterUV.y, 2)) - _Threshold;
                 if (_Reverse) value = -value;
-                if (value < _EffectThreshold && _Threshold > _EffectThreshold) col.rgb = _EffectColor.rgb;
+                if (value <= _EffectThreshold 
+                    && _Threshold >= _EffectThreshold 
+                    && _Threshold + _EffectThreshold <= 1) 
+                {
+                    col = _EffectColor;
+                }
                 clip(value);
                 return col;
             }

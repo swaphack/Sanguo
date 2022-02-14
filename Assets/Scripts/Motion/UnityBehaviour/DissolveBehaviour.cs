@@ -3,7 +3,7 @@ using Motion.Dissolve;
 using System;
 using UnityEngine;
 
-namespace Motion.Unity
+namespace Motion.UnityBehaviour
 {
     /// <summary>
     /// 消溶行为（unity)
